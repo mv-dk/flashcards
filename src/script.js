@@ -3,6 +3,15 @@
 const FRONT = 0;
 const BACK = 1;
 
+class App {
+    constructor(){
+        this.decks = [];
+        this.currentDeck = undefined;
+    }
+
+    loadDeck(){}
+}
+
 class Deck {
     constructor(name){
         this.name = name;
@@ -16,6 +25,8 @@ class Deck {
         }
         return this.flashcards[i];
     }
+
+
 }
 
 class Flashcard {
@@ -45,7 +56,9 @@ class DomHelper {
         newDiv.innerText = flashcard.getTextContent();
         newDiv.style.border = "1px black solid";
         newDiv.style.width = "15em";
-        newDiv.style.height = "4em";
+        newDiv.style.height = newDiv.style.lineHeight = "4em";
+        newDiv.style.textAlign = "center";
+        newDiv.style.verticalAlign = "middle";
         newDiv.style.userSelect = "none";
         newDiv.addEventListener("click", x => { 
             flashcard.flip(); 
@@ -57,8 +70,10 @@ class DomHelper {
 
 function init(){
     console.log("Yay");
-
     let domHelper = new DomHelper();
+
+    let d1 = new Deck("danish words");
+    
     let fc1 = new Flashcard("Hello", "Hej");
     domHelper.addFlashcard(fc1);
 }
