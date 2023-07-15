@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Flashcards</title></head>
+<body>
+<h1>Flashcards</h1>
+<h2>deck</h2>
+<input type="button" value="delete" onclick="deleteButton(event)" />
+<input type="button" value="new" onclick="newButton(event)" />
+<div id="flashCardContainer"></div>
+
+<input type="button" value="previous" onclick="previousButton(event)" />
+<input type="button" value="next" onclick="nextButton(event)" />
+
+<div id="decks">
+    <ul></ul>    
+</div>
+
+<div id="card_template" style="display:none; border: 1px black solid; width: 20em; height: 4em; line-height: 4em; text-align: center; vertical-align: middle; user-select: none;"></div>
+<div id="newcard_template">
+    <textarea name="frontside" placeholder="front side" style="width: 20em"></textarea>
+    <textarea name="backside" placeholder="back side" style="width: 20em"></textarea>
+</div>
+
+<script type="text/javascript" src="script2.js"></script>
+</body>
+</html>
